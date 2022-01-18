@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types'
+import './Items.css'
 
 const Item = (props) =>
 {
   const { title, amount } = props;  // Destructuring 
+  const status = amount < 0 ? "expense" : "income"
   return (
-    <li>{title} <span>{amount}</span></li>
+    <li className={status}>{title}<span>{amount}</span></li>
   )
 }
 
